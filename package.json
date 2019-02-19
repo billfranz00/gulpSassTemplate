@@ -1,0 +1,16 @@
+{
+  "name": "starter-sass",
+  "version": "1.0.0",
+  "description": "Template for SASS projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Billy Franz",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}

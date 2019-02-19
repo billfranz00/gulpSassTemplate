@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #fff;
+  font-family: "Arial";
+  text-align: center; }
+
+a {
+  text-decoration: none;
+  color: #333; }
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 0 20px; }
+
+header#main-header {
+  padding: 1em;
+  background: #008080;
+  color: #fff; }
+  header#main-header h1 {
+    font-size: 40px; }
+
+nav#main-nav {
+  background: #009a9a;
+  height: 40px; }
+  nav#main-nav ul {
+    list-style: none; }
+  nav#main-nav li {
+    display: inline; }
