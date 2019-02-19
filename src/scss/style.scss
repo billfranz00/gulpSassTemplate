@@ -1,23 +1,5 @@
-// Variables
-// $body-bg: blue;
-$body-bg: #fff;
-$main-font: 'Arial';
-
-$primary-color: #008080;
-$secondary-color: #009a9a;
-$light-color: #f4f4f4;
-$dark-color: #333;
-
-$container: 960px;
-
-// Functions
-@function set-text-color($bg-color) {
-	@if(lightness($bg-color) > 50) {
-		@return #000;
-	} @else {
-		@return #fff;
-	}
-}
+@import 'variables';
+@import 'functions';
 
 * {
 	margin: 0;
@@ -67,4 +49,39 @@ nav#main-nav {
 			color: #ccc;
 		}
 	}
+}
+
+.section {
+	padding: $section-padding;
+	h1 {
+		margin-bottom: 30px;
+	}
+}
+
+#section-a {
+	@extend .section;
+	background: $light-color;
+	color: set-text-color($light-color);
+}
+
+#section-b {
+	@extend .section;
+	background: $dark-color;
+	color: set-text-color($dark-color);
+}
+
+.button {
+	padding: 10px 15px;
+}
+
+.button-a {
+	@extend .button;
+	background: darken($primary-color, 10%);
+	color: set-text-color($primary-color);
+}
+
+.button-b {
+	@extend .button;
+	background: lighten($secondary-color, 10%);
+	color: set-text-color($secondary-color);
 }
