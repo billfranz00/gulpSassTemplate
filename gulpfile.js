@@ -1,12 +1,17 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
 
-// Compile SASS
+// Compile SASS and Minify CSS
 gulp.task('sass', () => {
+	const plugins = [cssnano()];
 	return gulp.src(['src/scss/*.scss'])
 		.pipe(sass())
-		.pipe(gulp.dest('src/css'))
+		.pipe(postcss(plugins))
+		// .pipe(gulp.dest('src/css'))
+		.pipe(gulp.dest('src/newCss'))
 		.pipe(browserSync.stream());
 });
 
