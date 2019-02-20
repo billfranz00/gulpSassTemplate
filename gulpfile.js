@@ -3,6 +3,8 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
+const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify-es').default;
 
 // Compile SASS and Minify CSS
 gulp.task('sass', () => {
@@ -13,6 +15,19 @@ gulp.task('sass', () => {
 		// .pipe(gulp.dest('src/css'))
 		.pipe(gulp.dest('src/newCss'))
 		.pipe(browserSync.stream());
+});
+
+// Optimize Images
+gulp.task('shrinkImg', () => {
+	return gulp.src('src/img/*')
+		.pipe(imagemin({ progressive: true }))
+		.pipe(gulp.dest('src/dist/img'));
+});
+
+gulp.task('dudify', () => {
+	return gulp.src('src/js/*.js')
+		.pipe(uglify())
+		.pipe(gulp.dest('src/dist/js'));
 });
 
 // Watch & Serve
